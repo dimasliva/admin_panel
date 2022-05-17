@@ -1,0 +1,16 @@
+const { createProxyMiddleware } = require('http-proxy-middleware')
+
+module.exports = function (app) {
+  app.use(
+    createProxyMiddleware('/api', {
+      target: process.env.REACT_APP_API,
+      changeOrigin: true,
+    }),
+  )
+  app.use(
+    createProxyMiddleware('/upload', {
+      target: process.env.REACT_APP_API,
+      changeOrigin: true,
+    }),
+  )
+}
