@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:1-bullseye
 VOLUME /raor_dev_volume
 RUN rm -rf /etc/nginx/conf.d/default.conf
 # ADD ./nginx/default.conf /etc/nginx/conf.d/default.conf
